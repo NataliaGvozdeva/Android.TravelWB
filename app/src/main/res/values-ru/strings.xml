@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Пора в путешествие</string>
+    <string name="dateToDeparture">Дата отправления:</string>
+    <string name="dateToArrive">Дата возвращения:</string>
+    <string name="separator">-</string>
+    <string name="currency">RUB</string>
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:padding="@dimen/common_spacing">
+
+    <TextView
+        android:id="@+id/startCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pairs_spacing"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/separator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        android:text="@sample/airlines.json/data/startCity"/>
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pairs_spacing"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:text="@string/separator"
+        app:layout_constraintStart_toEndOf="@+id/startCity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        tools:text="@sample/airlines.json/constats/separator"/>
+
+    <TextView
+        android:id="@+id/endCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pairs_spacing"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="0dp"
+        android:text="@sample/airlines.json/data/endCity"
+        app:layout_constraintStart_toEndOf="@+id/separator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"/>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/pairs_spacing"
+        android:text="@sample/airlines.json/data/price"
+        android:layout_marginEnd="@dimen/pairs_spacing"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintEnd_toStartOf="@+id/currency"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/pairs_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:text="@string/currency"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/barrier"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="startCity,separator,endCity"/>
+
+    <TextView
+        android:id="@+id/dateToDeparture"
+        android:layout_width="@dimen/date_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:text="@string/dateToDeparture"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    <TextView
+        android:id="@+id/dateToDepartureData"
+        android:layout_width="@dimen/date_width"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:text="@sample/airlines.json/data/startDate"
+        app:layout_constraintStart_toEndOf="@id/dateToDeparture"
+        app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+    <TextView
+        android:id="@+id/dateToArrive"
+        android:layout_width="@dimen/date_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:text="@string/dateToArrive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateToDepartureData" />
+
+    <TextView
+        android:id="@+id/dateToArriveData"
+        android:layout_width="@dimen/date_width"
+        android:layout_height="18dp"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:text="@sample/airlines.json/data/endDate"
+        app:layout_constraintStart_toEndOf="@id/dateToArrive"
+        app:layout_constraintTop_toBottomOf="@+id/dateToDepartureData" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="dateToArrive,dateToArriveData"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier2"
+        app:icon="@drawable/ic_like_24dp"
+        style="@style/Widget.AppTheme.LikeButton"        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

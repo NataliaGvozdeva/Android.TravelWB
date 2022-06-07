@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Time to travel</string>
+    <string name="separator">-</string>
+    <string name="dateToDeparture">Date to departure:</string>
+    <string name="dateToArrive">Date to arrive:</string>
+    <string name="currency">RUB</string>
+</resources>
